@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top" style="padding-left: 22rem; background: rgb(27 50 35) !important">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="./../assets/rent-a-car-logo.PNG" width="60px" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="session">
+                <!-- *ngIf="servis.OturumKontrol()" -->
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['']">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['arabalar']">Arabalar</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['arabadetaylari']"
+            >Araba Detayları</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="currentUserName == 'Admin'">
+          <a class="nav-link active" aria-current="page" [routerLink]="['uyeler']"
+            >Üyeler</a
+          >
+        </li>
+      </ul>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                    <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" *ngIf="!session">
+                    <a class="nav-link active" aria-current="page" href="/login">Oturum Aç</a
+          >
+        </li>
+        <li class="nav-item dropdown" *ngIf="session">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ currentUserName }}
+          </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" (click)="OturumKapat()">Oturumu Kapat</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div style="height: 50px"></div>
+<router-outlet> </router-outlet>

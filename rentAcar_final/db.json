@@ -1,0 +1,102 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "adi": "Yazılım",
+      "kaytarih": "1668069636299",
+      "duztarih": "1669493020034"
+    },
+    {
+      "id": 2,
+      "adi": "Tasarım",
+      "kaytarih": "1669493025838",
+      "duztarih": "1669493025838"
+    },
+    {
+      "id": 3,
+      "adi": "sadsa",
+      "kaytarih": "1670086905667",
+      "duztarih": "1670086905667"
+    },
+    {
+      "id": 4,
+      "adi": "asdas",
+      "kaytarih": "1670087300154",
+      "duztarih": "1670087300154"
+    },
+    {
+      "id": 5,
+      "adi": "BMW M5",
+      "kaytarih": "1670087360138",
+      "duztarih": "1670087360138"
+    },
+    {
+      "id": 6,
+      "adi": null,
+      "kaytarih": "1672135334784",
+      "duztarih": "1672135334784"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "adsoyad": "Hasan",
+      "mail": "hasan@g.com",
+      "admin": "1",
+      "parola": "123",
+      "kaytarih": "1668070115626",
+      "duztarih": "1668085146787"
+    },
+    {
+      "id": 2,
+      "adsoyad": "vemeli",
+      "mail": "veli@mail.com",
+      "admin": "0",
+      "parola": "123",
+      "kaytarih": "1668070283323",
+      "duztarih": "1668085150210"
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "dersadi": "Yazılım",
+      "derskredi": "3",
+      "categoryId": 1,
+      "kaytarih": "1669492454308",
+      "duztarih": "1670089827317"
+    },
+    {
+      "id": 2,
+      "dersadi": "Python",
+      "derskredi": "3",
+      "categoryId": "1",
+      "kaytarih": "1669493927763",
+      "duztarih": "1669493927763"
+    },
+    {
+      "id": 3,
+      "dersadi": "Grafik",
+      "derskredi": "3",
+      "categoryId": "2",
+      "kaytarih": "1669494689375",
+      "duztarih": "1669494713718"
+    },
+    {
+      "id": 4,
+      "dersadi": "BMW M5",
+      "derskredi": "2010",
+      "categoryId": "5",
+      "kaytarih": "1670087645104",
+      "duztarih": "1670087645104"
+    },
+    {
+      "id": 5,
+      "dersadi": "SADASDA",
+      "derskredi": "42424",
+      "categoryId": "2",
+      "kaytarih": "1670089832528",
+      "duztarih": "1670089832528"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+<div class="container" style="margin-top: 100px">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4>Üye Giriş Ekranı</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>E-Posta</label>
+                        <input type="text" class="form-control" #mail />
+                    </div>
+                    <div class="form-group">
+                        <label>Parola</label>
+                        <input type="password" class="form-control" #parola />
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-primary" (click)="OturumAc(mail.value, parola.value)">
+        Giriş
+      </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4>Üye Kayıt Ekranı</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>E-Posta</label>
+                        <input type="text" class="form-control" #regmail />
+                    </div>
+                    <div class="form-group">
+                        <label>İsim</label>
+                        <input type="text" class="form-control" #displayname />
+                    </div>
+                    <div class="form-group">
+                        <label>Parola</label>
+                        <input type="password" class="form-control" #regpass />
+                    </div>
+                </div>
+                <div class="card-footer d-flex">
+                    <button class="btn btn-outline-success" (click)="KayitOl(regmail.value, regpass.value, displayname.value)">
+                        Kayıt Ol
+                    </button>
+                    <div class="ms-2 d-block ms-auto">
+                        <asl-google-signin-button></asl-google-signin-button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

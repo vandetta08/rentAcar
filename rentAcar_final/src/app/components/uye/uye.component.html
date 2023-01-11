@@ -1,0 +1,91 @@
+<div class="container" style="margin-top: 100px">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h3>Üyeler</h3>
+            <button class="btn btn-outline-primary" (click)="Ekle(modalEkleDuzenle)">
+        Uye Ekle
+      </button>
+            <table class="table table-hover mt-3">
+                <thead>
+                    <th>Adı</th>
+                    <th>E-Posta Adresi</th>
+                    <th>uid</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users" [ngClass]="{'adminRow': user.displayName == 'Admin'}">
+                        <td>{{ user.displayName }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            {{user.uid}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" #modalEkleDuzenle>
+    <div class="modal-dialog">
+        <form [formGroup]="frm" (ngSubmit)="UyeEkleDuzenle()">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">{{ modalBaslik }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Üye Adı Soyadı</label>
+                        <input type="text" class="form-control" formControlName="adsoyad" />
+                        <label>Üye E-Posta</label>
+                        <input type="text" class="form-control" formControlName="mail" />
+                        <label>Parola</label>
+                        <input type="text" class="form-control" formControlName="parola" />
+                        <label>Yönetici mi</label>
+                        <select class="form-control" formControlName="admin">
+              <option value="1">Evet</option>
+              <option value="0">Hayır</option>
+            </select>
+                        <input type="hidden" class="form-control" formControlName="id" />
+                        <input type="hidden" class="form-control" formControlName="kaytarih" />
+                        <input type="hidden" class="form-control" formControlName="duztarih" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-outline-primary" value="Kaydet" />
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
+            Kapat
+          </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal" tabindex="-1" #modalSil>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">{{ modalBaslik }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6 *ngIf="secUye">
+                    {{ secUye.adsoyad }} adlı Üye Silinecektir Onaylıyor musunuz?
+                </h6>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-danger" *ngIf="secUye" (click)="UyeSil()">
+          Sil
+        </button>
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">
+          Kapat
+        </button>
+            </div>
+        </div>
+    </div>
+</div>
